@@ -1,5 +1,6 @@
 // Variables
-$font-family-base: 'Figtree', sans-serif;
+$font-family-base: "Figtree", sans--apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 
 // Mixins
 @mixin font-smoothing {
@@ -16,20 +17,15 @@ $font-family-base: 'Figtree', sans-serif;
 }
 
 // Document
-// 1. Correct the line height in all browsers
-// 2. Prevent adjustments of font size after orientation changes in iOS
-// 3. Set box-sizing to border-box
-// 4. Improve font rendering
 html {
-  line-height: 1.15; // Correct line height
-  -webkit-text-size-adjust: 100%; // Prevent font size adjustments
-  box-sizing: border-box; // Set box-sizing
-  @include font-smoothing; // Improve font rendering
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  @include font-smoothing;
   font-family: $font-family-base;
 }
 
 // Core
-// Set core body defaults
 body {
   @include reset-margin;
   min-height: 100vh;
@@ -38,31 +34,32 @@ body {
 }
 
 // Typography
-// Reset heading styles
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
   @include reset-margin;
 }
 
-// Correct the font size and margin on h1 elements within section and article contexts
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-// Add the correct font weight in Chrome, Edge, and Safari
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
-// Add the correct font size in all browsers
 small {
   font-size: 80%;
 }
 
 // Links
-// Remove the gray background on active links in IE 10 and remove default styles
 a {
   background-color: transparent;
   text-decoration: none;
@@ -70,42 +67,46 @@ a {
 }
 
 // Lists
-// Reset list styles
-ol, ul {
+ol,
+ul {
   list-style: none;
   @include reset-margin;
   @include reset-padding;
 }
 
 // Media
-// Make images easier to work with and remove border on images inside links in IE 10
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
   border-style: none;
 }
 
 // Forms
-// 1. Change the font styles in all browsers
-// 2. Remove the margin in Firefox and Safari
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   @include reset-margin;
 }
 
-// Show the overflow in IE and Edge
-button, input {
+button,
+input {
   overflow: visible;
 }
 
-// Remove the inheritance of text transform in Edge, Firefox, and IE
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-// Correct the inability to style clickable types in iOS and Safari
 button,
 [type="button"],
 [type="reset"],
@@ -114,7 +115,6 @@ button,
   cursor: pointer;
 }
 
-// Remove the inner border and padding in Firefox
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -123,7 +123,6 @@ button::-moz-focus-inner,
   @include reset-padding;
 }
 
-// Restore the focus styles unset by the previous rule
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -131,14 +130,10 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-// Correct the padding in Firefox
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-// 1. Correct the text wrapping in Edge and IE
-// 2. Correct the color inheritance from fieldset elements in IE
-// 3. Remove the padding so developers are not caught out when they zero out fieldset elements
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -148,69 +143,55 @@ legend {
   white-space: normal;
 }
 
-// Add the correct vertical alignment in Chrome, Firefox, and Opera
 progress {
   vertical-align: baseline;
 }
 
-// Remove the default vertical scrollbar in IE 10+
 textarea {
   overflow: auto;
 }
 
-// 1. Add the correct box sizing in IE 10
-// 2. Remove the padding in IE 10
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   @include reset-padding;
 }
 
-// Correct the cursor style of increment and decrement buttons in Chrome
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-// 1. Correct the odd appearance in Chrome and Safari
-// 2. Correct the outline style in Safari
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-// Remove the inner padding in Chrome and Safari on macOS
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-// 1. Correct the inability to style clickable types in iOS and Safari
-// 2. Change font properties to inherit in Safari
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
 
 // Tables
-// Remove default table spacing
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 // Interactive
-// Add the correct display in Edge, IE 10+, and Firefox
 details {
   display: block;
 }
 
-// Add the correct display in all browsers
 summary {
   display: list-item;
 }
 
 // Accessibility
-// Remove all animations and transitions for people that prefer not to see them
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -223,12 +204,10 @@ summary {
 }
 
 // Misc
-// Add the correct display in IE 10+
 template {
   display: none;
 }
 
-// Add the correct display in IE 10
 [hidden] {
   display: none;
-} 
+}
