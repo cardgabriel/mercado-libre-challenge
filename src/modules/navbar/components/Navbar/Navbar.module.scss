@@ -1,5 +1,20 @@
 @use "@styles/theme.scss" as theme;
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &-main {
+    flex: 1;
+    align-self: center;
+    max-width: theme.$max-width;
+    width: 100%;
+    padding: theme.space(lg);
+    background-color: theme.color(gray, background);
+  }
+}
+
 $navbar-height: 24px;
 
 .navbar {
@@ -27,5 +42,4 @@ $navbar-height: 24px;
   height: $navbar-height;
   width: auto;
 }
-
 

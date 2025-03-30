@@ -26,9 +26,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@styles/*": ["src/styles/*"],
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"]
+      "@styles/*": ["src/modules/common/styles/*"],
+      "@navbar/*": ["src/modules/navbar/*"],
+      "@items-list/*": ["src/modules/items-list/*"],
+      "@item-detail/*": ["src/modules/item-detail/*"],
+      "@not-found/*": ["src/modules/not-found/*"]
     }
   },
   "include": ["src"]

@@ -1,0 +1,70 @@
+@use "@styles/theme.scss" as theme;
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Grid templates
+$mobile-grid-areas: (
+  "breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area"
+    "items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area"
+    "items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area"
+    "items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area"
+    "product_info_area product_info_area product_info_area product_info_area product_info_area product_info_area"
+    "product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area"
+);
+
+$desktop-grid-areas: (
+  ". breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area breadcrumb_area ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area product_info_area product_info_area product_info_area ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area product_info_area product_info_area product_info_area ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area product_info_area product_info_area product_info_area ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area . . . ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area . . . ."
+    ". items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area items_images_area . . . ."
+    ". product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area . . . ."
+    ". product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area . . . ."
+    ". product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area . . . ."
+    ". product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area . . . ."
+    ". product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area product_description_area . . . ."
+);
+
+// Base styles
+.container_area {
+  display: grid;
+  grid-template-columns: repeat(theme.$grid-columns-mobile, 1fr);
+  grid-template-rows: repeat(theme.$grid-columns-mobile, 1fr);
+  gap: theme.space(md);
+  grid-template-areas: $mobile-grid-areas;
+  min-height: 100vh;
+
+  @include responsive(theme.$breakpoint-desktop) {
+    grid-template-columns: repeat(theme.$grid-columns-desktop, 1fr);
+    grid-template-rows: repeat(theme.$grid-columns-desktop, 1fr);
+    grid-template-areas: $desktop-grid-areas;
+  }
+}
+
+// Grid areas
+.breadcrumb_area {
+  grid-area: breadcrumb_area;
+  padding: theme.space(md) 0;
+  background-color: yellow;
+}
+
+.items_images_area {
+  grid-area: items_images_area;
+  background-color: yellow;
+}
+
+.product_info_area {
+  grid-area: product_info_area;
+  background-color: yellow;
+}
+
+.product_description_area {
+  grid-area: product_description_area;
+  background-color: yellow;
+}

@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import ItemsList from "./pages/ItemsList";
-import NotFound from "./pages/NotFound";
-import ItemDetail from "./pages/ItemDetail";
-import Layout from "./components/Layout/Layout";
+import Navbar from "@navbar/components/Navbar/Navbar";
+import Home from "@/modules/home/pages/Home";
+import ItemsList from "@items-list/pages/ItemsList";
+import ItemDetail from "@item-detail/pages/ItemDetail";
+import NotFound from "@not-found/pages/NotFound";
 
 const routes = [
   {
     path: "/",
-    element: <Layout />,
+    element: <Navbar />,
     children: [
       {
         index: true,
