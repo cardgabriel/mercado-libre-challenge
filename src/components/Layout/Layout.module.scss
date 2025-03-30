@@ -1,12 +1,16 @@
 @use "@styles/theme.scss" as theme;
 
 .app {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+  min-height: 100vh;
 
-.app-main {
-  flex: 1;
-  padding: theme.space(lg);
+  &-main {
+    flex: 1;
+    align-self: center;
+    max-width: theme.$max-width;
+    width: 100%;
+    padding: theme.space(lg);
+    background-color: theme.color(gray, background);
+  }
 }
