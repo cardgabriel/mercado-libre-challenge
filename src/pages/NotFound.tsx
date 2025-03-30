@@ -1,4 +1,4 @@
-export const NotFound = () => {
+ const NotFound = () => {
   return (
     <div className="not-found">
       <h1>404 - Página no encontrada</h1>
@@ -6,3 +6,5 @@ export const NotFound = () => {
     </div>
   );
 };
+
+export default NotFound;

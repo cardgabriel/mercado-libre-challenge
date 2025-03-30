@@ -1,0 +1,36 @@
+@use "@styles/theme.scss" as theme;
+
+.searchContainer {
+  display: flex;
+  width: 100%;
+  background-color: theme.color(white);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.searchInput {
+  flex: 1;
+  padding: theme.space(sm) theme.space(md);
+  border: none;
+  font-size: 18px;
+  outline: none;
+  color: theme.color(dark);
+
+  &::placeholder {
+    color: theme.color(light);
+  }
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 theme.space(md);
+  border: none;
+  background-color: theme.color(gray, background);
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
