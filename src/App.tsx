@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FC } from "react";
-import { Layout } from "./components/Layout";
+import { Layout } from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import ItemsList from "./pages/ItemsList";
 import { NotFound } from "./pages/NotFound";
@@ -33,7 +32,7 @@ const routes = [
 
 const router = createBrowserRouter(routes);
 
-const App: FC = () => {
+const App = () => {
   return <RouterProvider router={router} />;
 };
 

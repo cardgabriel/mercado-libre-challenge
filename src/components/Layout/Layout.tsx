@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import styles from "./Layout.module.scss";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -6,8 +7,9 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = () => {
   return (
-    <div className="app">
-      <main className="app-main">
+    <div className={styles.app}>
+      <nav className={styles.navbar} />
+      <main className={styles.appMain}>
         <Outlet />
       </main>
     </div>
