@@ -4,24 +4,20 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: theme.color(gray, background);
 
-  &-main {
+  &_main {
     flex: 1;
     align-self: center;
     max-width: theme.$max-width;
     width: 100%;
-    padding: theme.space(lg);
-    background-color: theme.color(gray, background);
   }
 }
-
-$navbar-height: 24px;
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-color: theme.color(primary);
   box-shadow: theme.$box-shadow;
   padding: theme.space(md);
@@ -31,7 +27,6 @@ $navbar-height: 24px;
   max-width: theme.$max-width;
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +34,6 @@ $navbar-height: 24px;
 }
 
 .logo {
-  height: $navbar-height;
+  height: 24px;
   width: auto;
 }
-

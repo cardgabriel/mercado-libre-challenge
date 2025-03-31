@@ -1,16 +1,16 @@
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import styles from "./ItemDetailLayout.module.scss";
+import ProductInfo from "../ProductInfo/ProductInfo";
+import ImageProduct from "../ImageProduct/ImageProduct";
+import ProductDescription from "../ProductDescription/ProductDescription";
 
 const ItemDetailLayout = () => {
   return (
-    <div className={styles.container_area}>
-      <div className={styles.breadcrumb_area}>
-        <Breadcrumb />
-      </div>
-      <div className={styles.items_images_area}></div>
-      <div className={styles.product_info_area}></div>
-      <div className={styles.product_description_area}></div>
-    </div>
+    <>
+      <Breadcrumb />
+      <ImageProduct />
+      <ProductInfo />
+      <ProductDescription />
+    </>
   );
 };
 

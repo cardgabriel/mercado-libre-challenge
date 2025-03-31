@@ -18,7 +18,7 @@ const Navbar = () => {
         <SearchInput />
       </div>
     </nav>
-      <main className={styles.appMain}>
+      <main className={styles.app_main}>
         <Outlet />
       </main>
     </div>
