@@ -1,24 +1,18 @@
-@use "@styles/theme.scss" as theme;
-
-@mixin responsive($breakpoint) {
-  @media (min-width: $breakpoint) {
-    @content;
-  }
-}
+@use "@styles/theme.scss" as *;
 
 .description_container {
   display: flex;
   flex-direction: column;
-  gap: theme.space(xxl);
+  gap: $space-32;
 }
 
 .description_title {
   font-size: 28px;
-  color: theme.color(gray, dark);
+  color: $color-gray-dark;
 }
 
 .description_text {
   font-size: 16px;
-  color: theme.color(gray, medium);
+  color: $color-gray-medium;
   margin: 0;
 }

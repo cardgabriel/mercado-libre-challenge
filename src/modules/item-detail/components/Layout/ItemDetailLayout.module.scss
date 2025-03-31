@@ -1,24 +1,34 @@
-@use "@styles/theme.scss" as theme;
+@use "@styles/theme.scss" as *;
 
-.container_area {
-    width: 100%;
+.container {
+  background: $color-white;
+  display: grid;
+  padding: $space-32;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: $space-12;
+  grid-template-areas:
+    "image_area"
+    "info_area"
+    "description_area";
+
+  @include is-desktop {
+    border-radius: $space-4;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "image_area image_area image_area image_area info_area info_area"
+      "description_area description_area description_area description_area . .";
+  }
 }
 
-.container_secondary {
-  display: flex;
-  gap: theme.space(xxl);
-  width: 100%;
+.image_area {
+  grid-area: image_area;
 }
 
-.items_images_area {
-  max-width: 680px;
-  width: 100%;
+.info_area {
+  grid-area: info_area;
 }
 
-.product_info_area {
-  width: 100%;
-}
-
-.product_description_area {
-  width: 100%;
+.description_area {
+  grid-area: description_area;
 }

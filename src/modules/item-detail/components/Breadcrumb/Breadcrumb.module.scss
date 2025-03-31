@@ -1,19 +1,19 @@
-@use "@styles/theme.scss" as theme;
+@use "@styles/theme.scss" as *;
 
 .breadcrumb {
-  margin: theme.space(xxl) theme.space(lg);
+  margin: $space-16;
 
-  @include theme.desktop {
-    margin: theme.space(lg) 0;
+  @include is-desktop {
+    margin: $space-16 0;
   }
 
   .list {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: theme.space(sm);
+    gap: $space-8;
 
-    @include theme.desktop {
+    @include is-desktop {
       flex-direction: row;
       align-items: center;
       gap: 0;
@@ -27,16 +27,16 @@
 
     &:last-child {
       font-weight: bold;
-      color: theme.color(gray, light);
+      color: $color-gray-light;
     }
   }
 
   .separator {
-    color: theme.color(gray, light);
-    margin: 0 theme.space(xs);
+    color: $color-gray-light;
+    margin: 0 $space-4;
   }
 
   .text {
-    color: theme.color(gray, light);
+    color: $color-gray-light;
   }
 }

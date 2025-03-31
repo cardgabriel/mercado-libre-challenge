@@ -1,23 +1,22 @@
-@use "@styles/theme.scss" as theme;
+@use "@styles/theme.scss" as *;
 
 .searchContainer {
   display: flex;
-  width: 100%;
-  background-color: theme.color(white);
+  width: 100%; 
+  background-color: $color-white;
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .searchInput {
   flex: 1;
-  padding: theme.space(sm) theme.space(md);
+  padding: $space-8 $space-12;
   border: none;
   font-size: 18px;
   outline: none;
-  color: theme.color(dark);
+  color: $color-gray-dark;
 
   &::placeholder {
-    color: theme.color(light);
+    color: $color-gray-light;
   }
 }
 
@@ -25,9 +24,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 theme.space(md);
+  padding: 0 $space-12;
   border: none;
-  background-color: theme.color(gray, background);
+  background-color: $color-gray-background;
 }
 
 .searchIcon {
