@@ -1,8 +1,8 @@
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import ProductInfo from "../ProductInfo/ProductInfo";
 import ImageProduct from "../ImageProduct/ImageProduct";
 import ProductDescription from "../ProductDescription/ProductDescription";
 import styles from "./ItemDetailLayout.module.scss";
+import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
 
 const ItemDetailLayout = () => {
   return (
