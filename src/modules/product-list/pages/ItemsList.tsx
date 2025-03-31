@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import ListProductsLayout from "../components/Layout/ListProductsLayout";
+import ListProductsLayout from "../components/ProductList/ProductList";
 import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
 
 const ItemsList = () => {

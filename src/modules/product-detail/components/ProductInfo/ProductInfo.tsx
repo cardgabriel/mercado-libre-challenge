@@ -1,12 +1,6 @@
 import styles from "./ProductInfo.module.scss";
 
-interface ProductInfoProps {
-  soldQuantity: number;
-  title: string;
-  price: number;
-}
-
-const MOCK_PRODUCT: ProductInfoProps = {
+const MOCK_PRODUCT = {
   soldQuantity: 150,
   title: "iPhone 13 Pro Max 256GB",
   price: 999.99,

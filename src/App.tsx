@@ -1,8 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "@navbar/components/Navbar/Navbar";
-import Home from "@/modules/home/pages/Home";
-import ItemsList from "@items-list/pages/ItemsList";
-import ItemDetail from "@item-detail/pages/ItemDetail";
+import ItemsList from "@/modules/product-list/pages/ItemsList";
+import ItemDetail from "@/modules/product-detail/pages/ItemDetail";
 import NotFound from "@not-found/pages/NotFound";
 
 const routes = [
@@ -12,7 +11,12 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Home />,
+        element: (
+          <div>
+            <h1>Bienvenido a Mercado Libre</h1>
+            <p>Encuentra los mejores productos al mejor precio</p>
+          </div>
+        ),
       },
       {
         path: "items",

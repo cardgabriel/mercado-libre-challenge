@@ -1,31 +1,25 @@
 @use "@styles/theme.scss" as *;
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $space-16;
-  padding: $space-16;
-  background-color: $color-white;
-  border-radius: $space-4;
-}
-
 .product_container {
   display: grid;
-  gap: 16px;
+  column-gap: $space-16;
+  row-gap: $space-16;
   grid-template-columns: 1fr;
   grid-template-areas:
     "image"
     "price"
     "title"
     "location";
-  padding: 16px;
-  border-bottom: 1px solid #eee;
+  padding: $space-16 0;
+  border-bottom: 1px solid $color-gray-background;
 
   @include is-desktop {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 180px auto auto 20%;
     grid-template-areas:
-      "image image  price price price price price price location location"
-      "image image  title title title title title title . .";
+      "image price price location"
+      "image title title .";
+    align-items: center;
+    row-gap: $space-32;
   }
 
   &:last-child {
@@ -35,6 +29,8 @@
 
 .image {
   grid-area: image;
+  width: 180px;
+  justify-self: center;
 
   img {
     width: 180px;
@@ -49,18 +45,29 @@
   font-size: 24px;
   align-self: flex-end;
   color: $color-gray-dark;
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+}
+
+.shipping_icon {
+  width: $space-20;
+  height: $space-20;
+  object-fit: contain;
 }
 
 .title {
   grid-area: title;
   align-self: flex-start;
+
   font-size: 18px;
   color: $color-gray-dark;
 }
 
 .location {
   grid-area: location;
+  align-self: flex-end;
+
   font-size: 12px;
   color: $color-gray-medium;
-  align-self: flex-end;
 }

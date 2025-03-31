@@ -1,8 +1,11 @@
- const NotFound = () => {
+import styles from './NotFound.module.scss';
+
+const NotFound = () => {
   return (
-    <div className="not-found">
-      <h1>404 - Página no encontrada</h1>
-      <p>Lo sentimos, la página que buscas no existe.</p>
+    <div className={styles.not_found}>
+      <img src="/src/assets/icons/not-found.svg" alt="Página no encontrada" />
+      <p>Parece que esta página no existe</p>
+      <a href="/">Ir a la página principal</a>
     </div>
   );
 };

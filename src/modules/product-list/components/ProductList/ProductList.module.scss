@@ -1,0 +1,11 @@
+@use "@styles/theme.scss" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-16;
+  background-color: $color-white;
+  border-radius: $space-4;
+  padding: 0 $space-16;
+}
+

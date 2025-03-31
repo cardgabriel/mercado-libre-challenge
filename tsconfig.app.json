@@ -28,8 +28,8 @@
       "@/*": ["src/*"],
       "@styles/*": ["src/modules/common/styles/*"],
       "@navbar/*": ["src/modules/navbar/*"],
-      "@items-list/*": ["src/modules/items-list/*"],
-      "@item-detail/*": ["src/modules/item-detail/*"],
+      "@items-list/*": ["src/modules/product-list/*"],
+      "@item-detail/*": ["src/modules/product-detail/*"],
       "@not-found/*": ["src/modules/not-found/*"]
     }
   },

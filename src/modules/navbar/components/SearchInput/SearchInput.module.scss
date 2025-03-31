@@ -4,7 +4,7 @@
   display: flex;
   width: 100%; 
   background-color: $color-white;
-  border-radius: 2px;
+  border-radius: $space-4;
 }
 
 .searchInput {
@@ -30,6 +30,6 @@
 }
 
 .searchIcon {
-  width: 20px;
-  height: 20px;
+  width: $space-20;
+  height: $space-20;
 }
