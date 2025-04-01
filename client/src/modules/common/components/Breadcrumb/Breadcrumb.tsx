@@ -1,21 +1,24 @@
 import styles from "./Breadcrumb.module.scss";
 
-const MOCK_BREADCRUMB = [
-  { label: "Inicio" },
-  { label: "Categoría" },
-  { label: "Producto" },
-];
+interface BreadcrumbProps {
+  categories?: string[];
+}
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ categories = [] }: BreadcrumbProps) => {
+  const breadcrumbItems = [
+    { label: "Inicio" },
+    ...categories.map((category) => ({ label: category })),
+  ];
+
   return (
     <nav className={styles.breadcrumb}>
       <ul className={styles.list}>
-        {MOCK_BREADCRUMB.map((item, index) => (
+        {breadcrumbItems.map((item, index) => (
           <li key={item.label} className={styles.item}>
             {index > 0 && <span className={styles.separator}>&gt;</span>}
             <span
               className={
-                index === MOCK_BREADCRUMB.length - 1
+                index === breadcrumbItems.length - 1
                   ? styles.current
                   : styles.text
               }

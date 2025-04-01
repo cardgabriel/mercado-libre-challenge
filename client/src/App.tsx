@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "@navbar/components/Navbar/Navbar";
-import ItemsList from "@/modules/product-list/pages/ItemsList";
-import ItemDetail from "@/modules/product-detail/pages/ItemDetail";
+import ProductListPage from "@/modules/product-list/pages/ProductListPage";
 import NotFound from "@/modules/common/components/NotFound/NotFound";
+import ProductDetailPage from "@/modules/product-detail/pages/ProductDetailPage";
 
 const routes = [
   {
@@ -20,11 +20,11 @@ const routes = [
       },
       {
         path: "items",
-        element: <ItemsList />,
+        element: <ProductListPage />,
       },
       {
         path: "items/:id",
-        element: <ItemDetail />,
+        element: <ProductDetailPage />,
       },
       {
         path: "*",

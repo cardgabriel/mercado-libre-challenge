@@ -12,7 +12,7 @@ export interface ProductItemProps {
   };
 }
 
-export interface Item {
+export interface Product {
   id: string;
   title: string;
   price: {
@@ -25,11 +25,11 @@ export interface Item {
   free_shipping: boolean;
 }
 
-export interface ItemsResponse {
+export interface ProductsResponse {
   author: {
     name: string;
     lastname: string;
   };
   categories: string[];
-  items: Item[];
+  items: Product[];
 }
