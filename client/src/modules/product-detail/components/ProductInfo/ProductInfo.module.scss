@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@styles/theme.scss" as *;
 
 .product_container {
@@ -42,6 +43,6 @@
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: darken($color-secondary, 5%);
+    background-color: color.adjust($color-secondary, $lightness: -5%);
   }
 }
