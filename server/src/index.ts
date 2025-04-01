@@ -11,12 +11,13 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/todos", (req, res) => {
-  res.json([
-    { id: 1, title: "Tarea de ejemplo 1", completed: false },
-    { id: 2, title: "Tarea de ejemplo 2", completed: true },
-    { id: 23, title: "Tarea de ejemplo 22", completed: true },
-
-  ]);
+  setTimeout(() => {
+    res.json([
+      { id: 1, title: "Tarea de ejemplo 1", completed: false },
+      { id: 2, title: "Tarea de ejemplo 2", completed: true },
+      { id: 23, title: "Tarea de ejemplo 22", completed: true },
+    ]);
+  }, 2000); 
 });
 
 app.listen(PORT, () => {

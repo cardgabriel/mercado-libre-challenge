@@ -1,0 +1,25 @@
+@use "@styles/theme.scss" as *;
+
+.loading_container {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 60px);
+}
+
+.spinner {
+  width: $space-40;
+  height: $space-40;
+  border-radius: 50%;
+  border: $space-4 solid $color-white;
+  border-top-color: $color-secondary;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,4 +1,4 @@
-@use "../../common/styles/theme.scss" as *;
+@use "@styles/theme.scss" as *;
 
 .not_found {
   display: flex;
@@ -7,18 +7,16 @@
   justify-content: center;
   text-align: center;
   gap: $space-12;
-  
-  height: 100vh;
+  height: $max-height;
   width: 100%;
   padding: $space-16;
-  
+
   img {
     max-width: 200px;
   }
-  
+
   p {
     font-size: 20px;
     color: $color-gray-dark;
   }
-
 }

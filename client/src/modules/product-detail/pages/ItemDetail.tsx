@@ -1,20 +1,21 @@
-import { useEffect } from "react";
-import axios from "axios";
+import { API_URLS } from "@/modules/common/config/api";
+import useQuery from "@/modules/common/hooks/useQuery";
 import ItemDetailLayout from "../components/Layout/ItemDetailLayout";
+import Loading from "@/modules/common/components/Loading/Loading";
+import NotFound from "@/modules/common/components/NotFound/NotFound";
+
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 const ItemDetail = () => {
-  useEffect(() => {
-    const fetchTodo = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3000/api/todos`);
-        console.log("Respuesta de la API:", response.data);
-      } catch (err) {
-        console.error("Error al obtener los datos:", err);
-      }
-    };
+  const { data, loading, error } = useQuery<Todo[]>(API_URLS.todos);
 
-    fetchTodo();
-  }, []);
+  if (loading) return <Loading />;
+  if (error) return <NotFound />;
+  console.log(data);
 
   return <ItemDetailLayout />;
 };

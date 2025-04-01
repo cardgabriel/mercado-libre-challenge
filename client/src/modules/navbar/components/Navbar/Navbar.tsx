@@ -7,17 +7,17 @@ const Navbar = () => {
   return (
     <div className={styles.app}>
       <nav className={styles.navbar}>
-      <div className={styles.container}>
-        <Link to="/">
-          <img
-            src={PrimaryLogo}
-            alt="Mercado Libre Logo"
-            className={styles.logo}
-          />
-        </Link>
-        <SearchInput />
-      </div>
-    </nav>
+        <div className={styles.container}>
+          <Link to="/">
+            <img
+              src={PrimaryLogo}
+              alt="Mercado Libre Logo"
+              className={styles.logo}
+            />
+          </Link>
+          <SearchInput />
+        </div>
+      </nav>
       <main className={styles.app_main}>
         <Outlet />
       </main>

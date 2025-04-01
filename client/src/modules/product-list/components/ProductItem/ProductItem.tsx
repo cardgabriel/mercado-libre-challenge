@@ -1,5 +1,6 @@
 import { ProductItemProps } from "../../models/models";
 import styles from "./ProductItem.module.scss";
+import ShippingIcon from "@/assets/icons/ic_shipping.webp";
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
@@ -10,7 +11,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
       <div className={styles.price}>
         <span>$ {product.price.toLocaleString("es-AR")}</span>
         <img
-          src="/src/assets/icons/ic_shipping.webp"
+          src={ShippingIcon}
           alt="Envío gratis"
           className={styles.shipping_icon}
         />
