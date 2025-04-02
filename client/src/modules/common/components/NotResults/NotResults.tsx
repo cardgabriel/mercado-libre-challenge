@@ -1,4 +1,4 @@
-import styles from "./NoResults.module.scss";
+import styles from "./NotResults.module.scss";
 import NotFoundIcon from "@/assets/icons/not-found.svg";
 
 const NoResults = () => {

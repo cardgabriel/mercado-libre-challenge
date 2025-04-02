@@ -11,20 +11,7 @@ const ProductList = ({ products }: ProductListProps) => {
   return (
     <div className={styles.container}>
       {products?.map((product) => (
-        <ProductItem
-          key={product.id}
-          product={{
-            id: product.id,
-            thumbnail: product.picture,
-            title: product.title,
-            price: product.price.amount,
-            seller_address: {
-              state: {
-                name: "Capital Federal", // TODO: Agregar ubicación real
-              },
-            },
-          }}
-        />
+        <ProductItem key={product.id} product={product} />
       ))}
     </div>
   );

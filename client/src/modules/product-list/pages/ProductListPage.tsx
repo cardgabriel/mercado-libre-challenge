@@ -3,10 +3,10 @@ import ListProductsLayout from "../components/ProductList/ProductList";
 import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
 import useQuery from "@/modules/common/hooks/useQuery";
 import { ProductsResponse } from "../models/models";
-import { API_URLS } from "@/modules/common/config/api";
+import { API_URLS } from "@/modules/common/urls";
 import Loading from "@/modules/common/components/Loading/Loading";
 import NotFound from "@/modules/common/components/NotFound/NotFound";
-import NoResults from "@/modules/common/components/NoResults/NoResults";
+import NoResults from "@/modules/common/components/NotResults/NotResults";
 
 const ProductListPage = () => {
   const [searchParams] = useSearchParams();

@@ -1,17 +1,3 @@
-export interface ProductItemProps {
-  product: {
-    id: string;
-    thumbnail: string;
-    title: string;
-    price: number;
-    seller_address: {
-      state: {
-        name: string;
-      };
-    };
-  };
-}
-
 export interface Product {
   id: string;
   title: string;
@@ -21,8 +7,8 @@ export interface Product {
     decimals: number;
   };
   picture: string;
-  condition: string;
   free_shipping: boolean;
+  city: string;
 }
 
 export interface ProductsResponse {
