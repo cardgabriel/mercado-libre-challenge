@@ -1,7 +1,7 @@
 import ProductInfo from "../ProductInfo/ProductInfo";
 import ImageProduct from "../ImageProduct/ImageProduct";
 import ProductDescription from "../ProductDescription/ProductDescription";
-import styles from "./ProductDetailLayout.module.scss";
+import styles from "./ProductDetailPage.module.scss";
 import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
 
 const ProductDetailLayout = () => {

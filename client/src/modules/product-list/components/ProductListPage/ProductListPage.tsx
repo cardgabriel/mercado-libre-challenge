@@ -1,14 +1,15 @@
-import { useSearchParams } from "react-router-dom";
-import ListProductsLayout from "../components/ProductList/ProductList";
+import styles from "./ProductListPage.module.scss";
+import ProductItem from "../ProductItem/ProductItem";
+import { ProductsResponse, ProductListProps } from "../../models/models";
 import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
-import useQuery from "@/modules/common/hooks/useQuery";
-import { ProductsResponse } from "../models/models";
-import { API_URLS } from "@/modules/common/urls";
 import Loading from "@/modules/common/components/Loading/Loading";
 import NotFound from "@/modules/common/components/NotFound/NotFound";
 import NoResults from "@/modules/common/components/NotResults/NotResults";
+import useQuery from "@/modules/common/hooks/useQuery";
+import { useSearchParams } from "react-router-dom";
+import { API_URLS } from "@/modules/common/urls";
 
-const ProductListPage = () => {
+const ProductList = ({ products }: ProductListProps) => {
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search")!;
 
@@ -23,9 +24,13 @@ const ProductListPage = () => {
   return (
     <>
       <Breadcrumb categories={data?.categories} />
-      <ListProductsLayout products={data?.items} />
+      <div className={styles.container}>
+        {products?.map((product) => (
+          <ProductItem key={product.id} product={product} />
+        ))}
+      </div>
     </>
   );
 };
 
-export default ProductListPage;
+export default ProductList;

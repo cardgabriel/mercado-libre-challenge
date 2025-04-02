@@ -19,3 +19,8 @@ export interface ProductsResponse {
   categories: string[];
   items: Product[];
 }
+
+export interface ProductListProps {
+  products?: Product[];
+  categories?: string[];
+}

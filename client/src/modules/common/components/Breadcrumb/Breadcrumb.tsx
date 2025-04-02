@@ -1,10 +1,6 @@
 import styles from "./Breadcrumb.module.scss";
 
-interface BreadcrumbProps {
-  categories?: string[];
-}
-
-const Breadcrumb = ({ categories = [] }: BreadcrumbProps) => {
+const Breadcrumb = ({ categories = [] }: { categories?: string[] }) => {
   const breadcrumbItems = [
     { label: "Inicio" },
     ...categories.map((category) => ({ label: category })),
