@@ -1,24 +1,17 @@
 import styles from "./ProductInfo.module.scss";
+import { ProductInfoProps } from "../../models/models";
 
-const MOCK_PRODUCT = {
-  soldQuantity: 150,
-  title: "iPhone 13 Pro Max 256GB",
-  price: 999.99,
-};
-
-const ProductInfo = () => {
+const ProductInfo = ({ product }: ProductInfoProps) => {
   return (
     <div className={styles.product_container}>
-      <div className={styles.sold_quantity}>
-        {MOCK_PRODUCT.soldQuantity} vendidos
-      </div>
+      <div className={styles.sold_quantity}>Nuevo</div>
       <div className={styles.product_title}>
-        <h1>{MOCK_PRODUCT.title}</h1>
+        <h1>{product.title}</h1>
       </div>
       <div className={styles.product_price}>
-        $
-        {MOCK_PRODUCT.price.toLocaleString("es-AR", {
-          minimumFractionDigits: 2,
+        {product.price.currency}{" "}
+        {product.price.amount.toLocaleString("es-AR", {
+          minimumFractionDigits: product.price.decimals,
         })}
       </div>
       <div className={styles.button_container}>

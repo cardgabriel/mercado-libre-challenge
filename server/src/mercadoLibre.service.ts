@@ -15,6 +15,7 @@ export class MercadoLibreService {
     try {
       const searchResponse = await this.fetchSearchResults(query, userAgent);
       const categories = await this.fetchCategories(searchResponse.results[0]);
+
       const products = searchResponse.results
         .slice(0, 4)
         .map((product) => this.formatProductResponse(product));
@@ -33,18 +34,18 @@ export class MercadoLibreService {
     }
   }
 
-  async getProductDetail(id: string): Promise<IProductDetail> {
+  async getProductDetail(
+    id: string,
+    userAgent: string,
+    query: string
+  ): Promise<IProductDetail> {
     try {
-      const [descriptionResponse, searchResponse] = await Promise.all([
-        axios.get(ML_API_URLS.getItemDescriptionUrl(id)),
-        axios.get(ML_API_URLS.SEARCH),
+      const [description, searchResults] = await Promise.all([
+        this.fetchDescriptionProduct(id),
+        this.fetchSearchResults(query, userAgent),
       ]);
 
-      const description = descriptionResponse.data;
-      const searchResults = searchResponse.data.results;
-
-      // Buscar el producto específico en los resultados de búsqueda
-      const searchProduct = searchResults.find(
+      const searchProduct = searchResults.results.find(
         (result: any) => result.id === id
       );
 
@@ -64,16 +65,31 @@ export class MercadoLibreService {
     }
   }
 
+  private async fetchDescriptionProduct(id: string): Promise<any> {
+    try {
+      const response = await axios.get(ML_API_URLS.getItemDescriptionUrl(id));
+      return response.data;
+    } catch (error) {
+      console.error("Error al obtener la descripción del producto:", error);
+      throw new Error("Error al obtener la descripción del producto");
+    }
+  }
+
   private async fetchSearchResults(
     query: string,
     userAgent: string
   ): Promise<IMLSearchResponse> {
-    const response = await axios.get(`${ML_API_URLS.SEARCH}?q=${query}`, {
-      headers: {
-        "User-Agent": userAgent || "Mozilla/5.0",
-      },
-    });
-    return response.data;
+    try {
+      const response = await axios.get(`${ML_API_URLS.SEARCH}?q=${query}`, {
+        headers: {
+          "User-Agent": userAgent || "Mozilla/5.0",
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error al obtener resultados de búsqueda:", error);
+      throw new Error("Error al obtener resultados de búsqueda");
+    }
   }
 
   private async fetchCategories(firstProduct: IProduct): Promise<string[]> {

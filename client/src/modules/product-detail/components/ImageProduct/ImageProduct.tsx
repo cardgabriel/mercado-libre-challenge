@@ -1,16 +1,11 @@
 import styles from "./ImageProduct.module.scss";
-import PrimaryLogo from "@/assets/logos/logo_ML_2x.png.webp";
 
-const ImageProduct = () => {
+const ImageProduct = ({ picture }: { picture: string }) => {
   return (
     <div className={styles.image_container}>
-      <img
-        src={PrimaryLogo}
-        alt="Mercado Libre Logo"
-        className={styles.product_image}
-      />
+      <img src={picture} alt="Producto" className={styles.product_image} />
     </div>
   );
 };
 
-export default ImageProduct; 
+export default ImageProduct;
