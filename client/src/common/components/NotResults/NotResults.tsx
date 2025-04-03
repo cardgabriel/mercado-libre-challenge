@@ -15,7 +15,7 @@ const NotResults = () => {
         aria-live="polite"
         aria-atomic="true"
       >
-        <img src={NotFoundIcon} alt="Sin resultados" />
+        <img src={NotFoundIcon} alt="Sin resultados" width="200" height="200" />
         <p>No hay publicaciones que coincidan con tu búsqueda</p>
       </div>
     </>

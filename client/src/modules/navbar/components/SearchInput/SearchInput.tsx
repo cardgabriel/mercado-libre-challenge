@@ -42,7 +42,13 @@ const SearchInput = () => {
         onClick={handleSearch}
         aria-label="Buscar productos"
       >
-        <img src={SearchIcon} alt="Buscar" className={styles.searchIcon} />
+        <img
+          src={SearchIcon}
+          alt="Buscar"
+          className={styles.searchIcon}
+          width="18"
+          height="18"
+        />
       </button>
     </div>
   );

@@ -30,7 +30,13 @@ const ProductItem = ({ product }: { product: Product }) => {
       tabIndex={0}
     >
       <div className={styles.image}>
-        <img src={product.picture} alt={product.title} />
+        <img
+          src={product.picture}
+          alt={product.title}
+          loading="lazy"
+          width="180"
+          height="180"
+        />
       </div>
       <div className={styles.price}>
         <span>$ {product.price.amount.toLocaleString("es-AR")}</span>
@@ -39,6 +45,8 @@ const ProductItem = ({ product }: { product: Product }) => {
             src={ShippingIcon}
             alt="Envío gratis"
             className={styles.shipping_icon}
+            width="20"
+            height="20"
           />
         )}
       </div>

@@ -13,6 +13,8 @@ const Navbar = () => {
               src={PrimaryLogo}
               alt="Mercado Libre Logo"
               className={styles.logo}
+              width="134"
+              height="34"
             />
           </Link>
           <SearchInput />

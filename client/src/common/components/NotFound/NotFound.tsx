@@ -10,7 +10,12 @@ const NotFound = () => {
         description="La página que estás buscando no existe"
       />
       <div className={styles.not_found} role="alert" aria-atomic="true">
-        <img src={NotFoundIcon} alt="Página no encontrada" />
+        <img
+          src={NotFoundIcon}
+          alt="Página no encontrada"
+          width="200"
+          height="200"
+        />
         <p>Parece que esta página no existe</p>
         <a href="/" aria-label="Ir a la página de inicio">
           Ir a la página principal

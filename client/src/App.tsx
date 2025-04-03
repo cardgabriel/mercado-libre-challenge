@@ -1,9 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Navbar from "@navbar/components/Navbar/Navbar";
-import ProductListPage from "@/modules/product-list/components/ProductListPage/ProductListPage";
-import NotFound from "@/common/components/NotFound/NotFound";
-import ProductDetailPage from "@/modules/product-detail/components/ProductDetailPage/ProductDetailPage";
 import NotResults from "./common/components/NotResults/NotResults";
+import Loading from "./common/components/Loading/Loading";
+
+// Implementando lazy loading para los componentes principales
+const ProductListPage = lazy(
+  () =>
+    import("@/modules/product-list/components/ProductListPage/ProductListPage")
+);
+const ProductDetailPage = lazy(
+  () =>
+    import(
+      "@/modules/product-detail/components/ProductDetailPage/ProductDetailPage"
+    )
+);
+const NotFound = lazy(() => import("@/common/components/NotFound/NotFound"));
 
 const routes = [
   {
@@ -16,15 +28,27 @@ const routes = [
       },
       {
         path: "items",
-        element: <ProductListPage />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ProductListPage />
+          </Suspense>
+        ),
       },
       {
         path: "items/:id",
-        element: <ProductDetailPage />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ProductDetailPage />
+          </Suspense>
+        ),
       },
       {
         path: "*",
-        element: <NotFound />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <NotFound />
+          </Suspense>
+        ),
       },
     ],
   },

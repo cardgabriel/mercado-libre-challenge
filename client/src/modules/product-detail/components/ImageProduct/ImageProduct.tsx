@@ -13,6 +13,9 @@ const ImageProduct = ({
         src={picture}
         alt={`Imagen de ${title}`}
         className={styles.product_image}
+        loading="lazy"
+        width="680"
+        height="500"
       />
     </div>
   );
