@@ -12,8 +12,15 @@ export interface IProduct {
   category_id?: string;
 }
 
-export interface IProductDetail extends IProduct {
-  description: string;
+export interface IProductDetail {
+  author: {
+    name: string;
+    lastname: string;
+  };
+  item: IProduct & {
+    description: string;
+  };
+  categories: string[];
 }
 
 export interface IProductResponse {

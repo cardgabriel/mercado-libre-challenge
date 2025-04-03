@@ -26,16 +26,16 @@ const ProductDetailLayout = () => {
 
   return (
     <>
-      <Breadcrumb />
+      <Breadcrumb categories={productData.categories} />
       <div className={styles.container}>
         <div className={styles.image_area}>
-          <ImageProduct picture={productData.picture} />
+          <ImageProduct picture={productData.item?.picture} />
         </div>
         <div className={styles.info_area}>
-          <ProductInfo product={productData} />
+          <ProductInfo product={productData.item} />
         </div>
         <div className={styles.description_area}>
-          <ProductDescription description={productData.description} />
+          <ProductDescription description={productData.item?.description} />
         </div>
       </div>
     </>

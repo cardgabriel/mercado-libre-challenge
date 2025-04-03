@@ -53,12 +53,17 @@ export class MercadoLibreService {
         throw new Error("Producto no encontrado");
       }
 
+      const categories = await this.fetchCategories(searchProduct);
+
       return {
         author: {
           name: "Gabriel",
           lastname: "Cardozo",
         },
-        ...this.formatProductResponse(searchProduct, description),
+        item: {
+          ...this.formatProductResponse(searchProduct, description),
+        },
+        categories,
       };
     } catch (error) {
       throw new Error("Error al obtener el detalle del producto");
