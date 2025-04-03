@@ -1,10 +1,20 @@
 import { Product } from "../../models/models";
 import styles from "./ProductItem.module.scss";
 import ShippingIcon from "@/assets/icons/ic_shipping.webp";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { ROUTES } from "@/modules/common/urls";
 
 const ProductItem = ({ product }: { product: Product }) => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get("search") || "";
+
+  const handleClick = () => {
+    navigate(ROUTES.PRODUCT_DETAIL(product.id, search));
+  };
+
   return (
-    <div className={styles.product_container}>
+    <div className={styles.product_container} onClick={handleClick}>
       <div className={styles.image}>
         <img src={product.picture} alt={product.title} />
       </div>

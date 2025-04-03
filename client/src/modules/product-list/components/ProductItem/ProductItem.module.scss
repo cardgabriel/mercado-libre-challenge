@@ -12,6 +12,7 @@
     "location";
   padding: $space-16 0;
   border-bottom: 1px solid $color-gray-background;
+  cursor: pointer;
 
   @include is-desktop {
     grid-template-columns: 180px auto auto 20%;
