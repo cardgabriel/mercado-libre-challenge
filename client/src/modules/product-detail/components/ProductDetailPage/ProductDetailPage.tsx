@@ -4,7 +4,7 @@ import ProductDescription from "../ProductDescription/ProductDescription";
 import styles from "./ProductDetailPage.module.scss";
 import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
 import { useParams, useSearchParams } from "react-router-dom";
-import useQuery from "@/modules/common/hooks/useQuery";
+import useFetch from "@/modules/common/hooks/useFetch";
 import { API_URLS } from "@/modules/common/urls";
 import NotFound from "@/modules/common/components/NotFound/NotFound";
 import Loading from "@/modules/common/components/Loading/Loading";
@@ -19,7 +19,7 @@ const ProductDetailLayout = () => {
     data: productData,
     loading,
     error,
-  } = useQuery<ProductDetail>(API_URLS.GET_PRODUCT_DETAIL(id!), { q: search });
+  } = useFetch<ProductDetail>(API_URLS.GET_PRODUCT_DETAIL(id!), { q: search });
 
   if (loading) return <Loading />;
   if (error || !productData) return <NotFound />;

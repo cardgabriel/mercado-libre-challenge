@@ -1,12 +1,17 @@
 import { useState, KeyboardEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./SearchInput.module.scss";
 import SearchIcon from "@/assets/icons/ic_search.webp";
 import { ROUTES } from "@/modules/common/urls";
 
 const SearchInput = () => {
-  const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const initialSearchValue = searchParams.get("search") || "";
+
+  const [searchValue, setSearchValue] = useState(
+    decodeURIComponent(initialSearchValue)
+  );
 
   const handleSearch = () => {
     if (searchValue.trim()) {
