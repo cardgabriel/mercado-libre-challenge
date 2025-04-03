@@ -13,8 +13,22 @@ const ProductItem = ({ product }: { product: Product }) => {
     navigate(ROUTES.PRODUCT_DETAIL(product.id, search));
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      handleClick();
+    }
+  };
+
   return (
-    <div className={styles.product_container} onClick={handleClick}>
+    <div
+      className={styles.product_container}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      aria-label="Ver producto"
+      tabIndex={0}
+    >
       <div className={styles.image}>
         <img src={product.picture} alt={product.title} />
       </div>

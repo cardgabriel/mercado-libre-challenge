@@ -27,7 +27,7 @@ const SearchInput = () => {
   };
 
   return (
-    <div className={styles.searchContainer}>
+    <div className={styles.searchContainer} role="search">
       <input
         type="text"
         placeholder="Nunca dejes de buscar"
@@ -35,11 +35,12 @@ const SearchInput = () => {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         onKeyDown={handleKeyDown}
+        aria-label="Buscar productos"
       />
       <button
         className={styles.searchButton}
         onClick={handleSearch}
-        aria-label="Buscar"
+        aria-label="Buscar productos"
       >
         <img src={SearchIcon} alt="Buscar" className={styles.searchIcon} />
       </button>

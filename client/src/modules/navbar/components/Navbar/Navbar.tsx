@@ -6,9 +6,9 @@ import SearchInput from "../SearchInput/SearchInput";
 const Navbar = () => {
   return (
     <div className={styles.app}>
-      <nav className={styles.navbar}>
+      <nav className={styles.navbar} aria-label="Navegación principal">
         <div className={styles.container}>
-          <Link to="/">
+          <Link to="/" aria-label="Inicio - Mercado Libre">
             <img
               src={PrimaryLogo}
               alt="Mercado Libre Logo"
