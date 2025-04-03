@@ -4,7 +4,7 @@ import { Product, ProductsResponse } from "../../models/models";
 import Breadcrumb from "@/common/components/Breadcrumb/Breadcrumb";
 import Loading from "@/common/components/Loading/Loading";
 import NotFound from "@/common/components/NotFound/NotFound";
-import NoResults from "@/common/components/NotResults/NotResults";
+import NotResults from "@/common/components/NotResults/NotResults";
 import useFetch from "@/common/hooks/useFetch";
 import { useSearchParams } from "react-router-dom";
 import { API_URLS } from "@/common/urls";
@@ -19,7 +19,7 @@ const ProductList = () => {
 
   if (loading) return <Loading />;
   if (error) return <NotFound />;
-  if (!data?.items.length) return <NoResults />;
+  if (!data?.items.length) return <NotResults />;
 
   return (
     <>

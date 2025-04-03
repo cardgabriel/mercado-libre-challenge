@@ -3,6 +3,7 @@ import Navbar from "@navbar/components/Navbar/Navbar";
 import ProductListPage from "@/modules/product-list/components/ProductListPage/ProductListPage";
 import NotFound from "@/common/components/NotFound/NotFound";
 import ProductDetailPage from "@/modules/product-detail/components/ProductDetailPage/ProductDetailPage";
+import NotResults from "./common/components/NotResults/NotResults";
 
 const routes = [
   {
@@ -11,12 +12,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: (
-          <div>
-            <h1>Bienvenido a Mercado Libre</h1>
-            <p>Encuentra los mejores productos al mejor precio</p>
-          </div>
-        ),
+        element: <NotResults  />,
       },
       {
         path: "items",
