@@ -9,7 +9,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <h1 id="product-title">{product?.title}</h1>
       </div>
       <div className={styles.product_price} id="product-price">
-        {product?.price.currency}{" "}
+        ${" "}
         {product?.price.amount.toLocaleString("es-AR", {
           minimumFractionDigits: product?.price.decimals,
         })}

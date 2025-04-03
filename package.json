@@ -9,7 +9,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "start": "cd server && npm start",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm run start\"",
     "test": "npm run test:client && npm run test:server",
     "test:client": "cd client && npm test",
     "test:server": "cd server && npm test",

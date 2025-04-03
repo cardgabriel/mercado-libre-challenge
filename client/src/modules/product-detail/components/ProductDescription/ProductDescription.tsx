@@ -1,4 +1,5 @@
 import styles from "./ProductDescription.module.scss";
+import ReactMarkdown from "react-markdown";
 
 const ProductDescription = ({ description }: { description: string }) => {
   return (
@@ -6,12 +7,12 @@ const ProductDescription = ({ description }: { description: string }) => {
       <h2 className={styles.description_title} id="product-description">
         Descripción del producto
       </h2>
-      <p
+      <div
         className={styles.description_text}
         aria-labelledby="product-description"
       >
-        {description}
-      </p>
+        <ReactMarkdown>{description}</ReactMarkdown>
+      </div>
     </div>
   );
 };
