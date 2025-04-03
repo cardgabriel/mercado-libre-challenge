@@ -2,7 +2,7 @@ import { Product } from "../../models/models";
 import styles from "./ProductItem.module.scss";
 import ShippingIcon from "@/assets/icons/ic_shipping.webp";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ROUTES } from "@/modules/common/urls";
+import { ROUTES } from "@/common/urls";
 
 const ProductItem = ({ product }: { product: Product }) => {
   const navigate = useNavigate();

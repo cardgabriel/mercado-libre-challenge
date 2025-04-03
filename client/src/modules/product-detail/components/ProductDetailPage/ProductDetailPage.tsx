@@ -2,12 +2,12 @@ import ProductInfo from "../ProductInfo/ProductInfo";
 import ImageProduct from "../ImageProduct/ImageProduct";
 import ProductDescription from "../ProductDescription/ProductDescription";
 import styles from "./ProductDetailPage.module.scss";
-import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/common/components/Breadcrumb/Breadcrumb";
 import { useParams, useSearchParams } from "react-router-dom";
-import useFetch from "@/modules/common/hooks/useFetch";
-import { API_URLS } from "@/modules/common/urls";
-import NotFound from "@/modules/common/components/NotFound/NotFound";
-import Loading from "@/modules/common/components/Loading/Loading";
+import useFetch from "@/common/hooks/useFetch";
+import { API_URLS } from "@/common/urls";
+import NotFound from "@/common/components/NotFound/NotFound";
+import Loading from "@/common/components/Loading/Loading";
 import { ProductDetail } from "../../models/models";
 
 const ProductDetailLayout = () => {

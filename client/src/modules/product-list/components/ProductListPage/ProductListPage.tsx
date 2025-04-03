@@ -1,13 +1,13 @@
 import styles from "./ProductListPage.module.scss";
 import ProductItem from "../ProductItem/ProductItem";
 import { Product, ProductsResponse } from "../../models/models";
-import Breadcrumb from "@/modules/common/components/Breadcrumb/Breadcrumb";
-import Loading from "@/modules/common/components/Loading/Loading";
-import NotFound from "@/modules/common/components/NotFound/NotFound";
-import NoResults from "@/modules/common/components/NotResults/NotResults";
-import useFetch from "@/modules/common/hooks/useFetch";
+import Breadcrumb from "@/common/components/Breadcrumb/Breadcrumb";
+import Loading from "@/common/components/Loading/Loading";
+import NotFound from "@/common/components/NotFound/NotFound";
+import NoResults from "@/common/components/NotResults/NotResults";
+import useFetch from "@/common/hooks/useFetch";
 import { useSearchParams } from "react-router-dom";
-import { API_URLS } from "@/modules/common/urls";
+import { API_URLS } from "@/common/urls";
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();

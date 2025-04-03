@@ -26,7 +26,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@styles/*": ["src/modules/common/styles/*"],
+      "@styles/*": ["src/common/styles/*"],
       "@navbar/*": ["src/modules/navbar/*"],
       "@items-list/*": ["src/modules/product-list/*"],
       "@item-detail/*": ["src/modules/product-detail/*"],

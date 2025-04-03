@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "@navbar/components/Navbar/Navbar";
 import ProductListPage from "@/modules/product-list/components/ProductListPage/ProductListPage";
-import NotFound from "@/modules/common/components/NotFound/NotFound";
+import NotFound from "@/common/components/NotFound/NotFound";
 import ProductDetailPage from "@/modules/product-detail/components/ProductDetailPage/ProductDetailPage";
 
 const routes = [

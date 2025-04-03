@@ -2,7 +2,7 @@ import { useState, KeyboardEvent } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./SearchInput.module.scss";
 import SearchIcon from "@/assets/icons/ic_search.webp";
-import { ROUTES } from "@/modules/common/urls";
+import { ROUTES } from "@/common/urls";
 
 const SearchInput = () => {
   const navigate = useNavigate();
