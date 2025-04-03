@@ -8,6 +8,7 @@ import NotResults from "@/common/components/NotResults/NotResults";
 import useFetch from "@/common/hooks/useFetch";
 import { useSearchParams } from "react-router-dom";
 import { API_URLS } from "@/common/urls";
+import SEO from "@/common/components/SEO/SEO";
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();
@@ -23,6 +24,12 @@ const ProductList = () => {
 
   return (
     <>
+      <SEO
+        title={`Resultados para ${search}`}
+        description={`Encuentra los mejores productos de ${search} en Mercado Libre`}
+        keywords={`${search}, productos, mercado libre, compras online`}
+        canonical={`${window.location.origin}/items?search=${search}`}
+      />
       <Breadcrumb categories={data?.categories} />
       <div className={styles.container}>
         {data.items.map((product: Product) => (

@@ -9,6 +9,7 @@ import { API_URLS } from "@/common/urls";
 import NotFound from "@/common/components/NotFound/NotFound";
 import Loading from "@/common/components/Loading/Loading";
 import { ProductDetail } from "../../models/models";
+import SEO from "@/common/components/SEO/SEO";
 
 const ProductDetailLayout = () => {
   const { id } = useParams();
@@ -24,8 +25,23 @@ const ProductDetailLayout = () => {
   if (loading) return <Loading />;
   if (error || !productData) return <NotFound />;
 
+  const productTitle = productData.item?.title;
+  const productDescription = productData.item?.description || "";
+  const productImage = productData.item?.picture;
+
   return (
     <>
+      <SEO
+        title={productTitle}
+        description={productDescription.slice(0, 160)}
+        keywords={`${productTitle}, ${productData.categories.join(
+          ", "
+        )}, mercado libre`}
+        canonical={`${window.location.origin}/items/${id}`}
+        ogTitle={productTitle}
+        ogDescription={productDescription.slice(0, 160)}
+        ogImage={productImage}
+      />
       <Breadcrumb categories={productData.categories} />
       <div className={styles.container}>
         <div className={styles.image_area}>
