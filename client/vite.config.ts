@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { configDefaults } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
@@ -24,5 +25,10 @@ export default defineConfig({
       "@item-detail": resolve(__dirname, "./src/modules/item-detail"),
       "@not-found": resolve(__dirname, "./src/modules/not-found"),
     },
+  },
+  test: {
+    environment: "node",
+    exclude: [...configDefaults.exclude, "e2e/*"],
+    globals: true,
   },
 });
