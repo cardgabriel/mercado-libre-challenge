@@ -79,13 +79,36 @@ This project implements a product search and display platform with a clear separ
 - **Custom Hooks**: Reusable logic for API fetching and state management
 - **Type Definitions**: Strongly typed interfaces for API responses and domain models
 
-## Design Decisions
+## Key Features
 
-- **API Transformation**: Server transforms complex Mercado Libre API responses into a cleaner format for the frontend
-- **Error Handling**: Comprehensive error states with user-friendly fallback UI components
-- **SEO Optimization**: Custom metadata for product listing and detail pages
-- **Performance Focus**: Optimized images, lazy loading, and efficient API response caching
-- **Developer Experience**: Consistent code organization and comprehensive TypeScript types
+### Usability
+
+- Intuitive interface with familiar design and clear navigation
+- Complete accessibility (ARIA, keyboard navigation, image alt text)
+- Visible loading states and effective error handling
+- User-friendly fallback UI components for error states
+
+### SEO
+
+- Dynamic metadata with React Helmet
+- Optimized titles, descriptions, and keywords
+- Social media support (Open Graph, Twitter Cards)
+- Custom metadata for product listing and detail pages
+
+### Performance
+
+- On-demand loading (lazy loading) of components and images
+- API request caching system (TTL: 5 min)
+- Resource optimization (WebP images, limited fonts)
+- Optimized images and efficient API response caching
+
+### Scalability
+
+- Modular architecture organized by features
+- Client-server separation with independent API
+- TypeScript throughout the project and automated testing
+- Clean API abstraction: Server transforms complex Mercado Libre API responses into a simpler format
+- Consistent code organization and comprehensive type definitions
 
 ## Testing
 
