@@ -27,8 +27,9 @@ export default defineConfig({
     },
   },
   test: {
-    environment: "node",
+    environment: "jsdom",
     exclude: [...configDefaults.exclude, "e2e/*"],
     globals: true,
+    setupFiles: [],
   },
 });
