@@ -1,29 +1,25 @@
 import { Product } from "../../models/models";
 import styles from "./ProductItem.module.scss";
 import ShippingIcon from "@/assets/icons/ic_shipping.webp";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ROUTES } from "@/common/urls";
 
 const ProductItem = ({ product }: { product: Product }) => {
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const search = searchParams.get("search") || "";
-
-  const handleClick = () => {
-    navigate(ROUTES.PRODUCT_DETAIL(product.id, search));
-  };
+  const productUrl = ROUTES.PRODUCT_DETAIL(product.id, search);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      handleClick();
     }
   };
 
   return (
-    <div
+    <Link
+      to={productUrl}
       className={styles.product_container}
-      onClick={handleClick}
+      prefetch="intent"
       onKeyDown={handleKeyDown}
       role="button"
       aria-label="Ver producto"
@@ -56,7 +52,7 @@ const ProductItem = ({ product }: { product: Product }) => {
       <div className={styles.location}>
         <span>{product.city}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 
