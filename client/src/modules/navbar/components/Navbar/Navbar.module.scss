@@ -6,6 +6,10 @@
   min-height: 100vh;
   background-color: $color-gray-background;
 
+  @include is-desktop {
+    padding-bottom: $space-24;
+  }
+
   &_main {
     flex: 1;
     align-self: center;
