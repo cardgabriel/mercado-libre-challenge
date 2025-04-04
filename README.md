@@ -2,8 +2,6 @@
 
 Full-stack application that allows users to search and view Mercado Libre products through a user-friendly interface developed with React and supported by an API built with Express.
 
-## URL del Proyecto
-
 [https://mercado-libre-challenge.up.railway.app/](https://mercado-libre-challenge.up.railway.app/)
 
 > **Note:** Since the application is deployed using Railway's free tier, there may be intermittent service interruptions.
